@@ -8,6 +8,7 @@ import cp from './cp.js';
 import add from './add.js';
 import rm from './rm.js';
 import mv from './mv.js';
+import os from './os.js';
 
 const handleCommand = (fullCommand) => {
     const [command, ...commandArgs] = fullCommand.toLowerCase().trim().split(' ');
@@ -21,7 +22,7 @@ const handleCommand = (fullCommand) => {
         case 'cp': cp(commandArgs[0], commandArgs[1]); break;
         case 'mv': mv(commandArgs[0], commandArgs[1]); break;
         case 'rm': rm(commandArgs[0]); break;
-        case 'os': console.log('os'); break;
+        case 'os': os(commandArgs[0]); break;
         case 'hash': console.log('hash'); break;
         case 'compress': console.log('compress'); break;
         case 'decompress': console.log('decompress'); break;
