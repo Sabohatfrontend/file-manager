@@ -4,6 +4,10 @@ import cd from './cd.js';
 import ls from './ls.js';
 import cat from './cat.js';
 import rn from './rn.js';
+import cp from './cp.js';
+import add from './add.js';
+import rm from './rm.js';
+import mv from './mv.js';
 
 const handleCommand = (fullCommand) => {
     const [command, ...commandArgs] = fullCommand.toLowerCase().trim().split(' ');
@@ -12,11 +16,11 @@ const handleCommand = (fullCommand) => {
         case 'cd': cd(commandArgs[0]); break;
         case 'ls': ls(); break;
         case 'cat': cat(commandArgs[0]); break;
-        case 'add': console.log('add'); break;
+        case 'add': add(commandArgs[0]); break;
         case 'rn': rn(commandArgs[0], commandArgs[1]); break;
-        case 'cp': console.log('cp'); break;
-        case 'mv': console.log('mv'); break;
-        case 'rm': console.log('rm'); break;
+        case 'cp': cp(commandArgs[0], commandArgs[1]); break;
+        case 'mv': mv(commandArgs[0], commandArgs[1]); break;
+        case 'rm': rm(commandArgs[0]); break;
         case 'os': console.log('os'); break;
         case 'hash': console.log('hash'); break;
         case 'compress': console.log('compress'); break;
