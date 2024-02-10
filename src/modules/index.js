@@ -9,6 +9,11 @@ import add from './add.js';
 import rm from './rm.js';
 import mv from './mv.js';
 import os from './os.js';
+import hash from './hash.js';
+
+import * as readline from 'node:readline';
+import compress from './compress.js';
+import decompress from './decompress.js';
 
 const handleCommand = (fullCommand) => {
     const [command, ...commandArgs] = fullCommand.toLowerCase().trim().split(' ');
@@ -23,10 +28,10 @@ const handleCommand = (fullCommand) => {
         case 'mv': mv(commandArgs[0], commandArgs[1]); break;
         case 'rm': rm(commandArgs[0]); break;
         case 'os': os(commandArgs[0]); break;
-        case 'hash': console.log('hash'); break;
-        case 'compress': console.log('compress'); break;
-        case 'decompress': console.log('decompress'); break;
-        default: break;
+        case 'hash': hash(commandArgs[0]); break;
+        case 'compress': compress(commandArgs[0], commandArgs[1]); break;
+        case 'decompress': decompress(commandArgs[0], commandArgs[1]); break;
+        default: console.log('Invalid input');
     }
     getCurrentDir();
 }

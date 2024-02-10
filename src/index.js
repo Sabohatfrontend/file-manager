@@ -15,7 +15,8 @@ getCurrentDir();
 const rl = readline.createInterface({ input, output });
 
 rl.on('line', (line) => {
-    handleCommand(line);
+    if (line === '.exit') rl.close();
+    else handleCommand(line);
 })
     .on('history', (history) => { })
     .on('SIGINT', () => {
